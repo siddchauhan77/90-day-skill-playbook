@@ -4,665 +4,381 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>90-Day Skill Playbook</title>
-  <meta name="description" content="Master one high-income skill in 90 days. 5 skill tracks mapped to Shaan Puri's 4 Rules of Money — with daily tasks and content ideas for building in public." />
-  <meta property="og:title" content="90-Day Skill Playbook" />
-  <meta property="og:description" content="Master one high-income skill in 90 days. Daily tasks + post ideas for building in public." />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="Master one high-income skill in 90 days. 5 skill tracks mapped to Shaan Puri's 4 Rules of Money." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0d0d;
-      --surface: #161616;
-      --border: #262626;
-      --text: #e8e8e8;
-      --muted: #888;
-      --accent: #f5c542;
-      --accent2: #4a90d9;
-      --green: #3ecf8e;
-      --radius: 10px;
+      --bg:#0d0d0d; --surface:#161616; --surface2:#1e1e1e; --border:#262626;
+      --text:#e8e8e8; --muted:#888; --accent:#f5c542; --accent2:#4a90d9;
+      --green:#3ecf8e; --r:10px;
     }
+    body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.65; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.65;
-      min-height: 100vh;
+    /* hero */
+    .hero { text-align:center; padding:100px 24px 80px; max-width:760px; margin:0 auto; }
+    .badge { display:inline-block; background:rgba(245,197,66,.12); color:var(--accent); border:1px solid rgba(245,197,66,.3); padding:5px 14px; border-radius:100px; font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-bottom:28px; }
+    .hero h1 { font-size:clamp(36px,6vw,60px); font-weight:800; letter-spacing:-.03em; line-height:1.1; margin-bottom:20px; }
+    .hero h1 span { color:var(--accent); }
+    .hero p { font-size:18px; color:var(--muted); max-width:540px; margin:0 auto 44px; line-height:1.7; }
+    .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:var(--r); font-size:15px; font-weight:600; cursor:pointer; border:none; transition:opacity .15s,transform .1s; text-decoration:none; }
+    .btn:hover { opacity:.88; transform:translateY(-1px); text-decoration:none; }
+    .btn-p { background:var(--accent); color:#000; }
+    .btn-s { background:var(--surface); color:var(--text); border:1px solid var(--border); }
+
+    /* layout */
+    .div { border:none; border-top:1px solid var(--border); max-width:900px; margin:0 auto; }
+    .sec { max-width:900px; margin:0 auto; padding:72px 24px; }
+    .lbl { font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+    .sec h2 { font-size:clamp(24px,4vw,34px); font-weight:700; letter-spacing:-.02em; margin-bottom:12px; }
+    .sub { color:var(--muted); font-size:17px; margin-bottom:48px; max-width:560px; }
+
+    /* cards */
+    .grid4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px; }
+    .card-lbl { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
+    .card p { font-size:14px; color:var(--muted); line-height:1.6; }
+
+    /* skills list */
+    .skills { display:flex; flex-direction:column; gap:12px; }
+    .sk { display:flex; align-items:center; gap:20px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:20px 24px; transition:border-color .15s; text-decoration:none; color:var(--text); }
+    .sk:hover { border-color:var(--accent); text-decoration:none; }
+    .sk-n { font-size:12px; font-weight:700; color:var(--muted); min-width:24px; }
+    .sk-i { flex:1; }
+    .sk-i h3 { font-size:17px; font-weight:700; margin-bottom:4px; }
+    .sk-m { font-size:13px; color:var(--muted); }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .tag { padding:3px 10px; border-radius:100px; font-size:12px; font-weight:600; }
+    .ts { background:rgba(62,207,142,.12); color:var(--green); }
+    .tm { background:rgba(74,144,217,.12); color:var(--accent2); }
+    .td { background:rgba(245,197,66,.12); color:var(--accent); }
+    .th { background:rgba(200,100,255,.12); color:#c864ff; }
+    .arr { color:var(--muted); font-size:20px; transition:transform .15s; }
+    .sk:hover .arr { transform:translateX(4px); }
+
+    /* steps */
+    .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+    .step { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:28px 24px; }
+    .step-n { width:32px; height:32px; background:rgba(245,197,66,.12); border:1px solid rgba(245,197,66,.3); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:var(--accent); margin-bottom:16px; }
+    .step h3 { font-size:15px; font-weight:700; margin-bottom:8px; }
+    .step p { font-size:14px; color:var(--muted); line-height:1.6; }
+
+    /* example box */
+    .box { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:32px; }
+    .box-lbl { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+    .box h3 { font-size:18px; font-weight:700; margin-bottom:20px; }
+    .blk { margin-bottom:20px; }
+    .blk-lbl { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .blk p { font-size:15px; line-height:1.6; }
+    .pi { display:flex; gap:12px; margin-bottom:10px; }
+    .pi:last-child { margin-bottom:0; }
+    .pn { font-size:11px; font-weight:700; color:var(--muted); padding-top:2px; min-width:16px; }
+    .pt { font-size:14px; line-height:1.6; }
+    .ph { font-weight:600; }
+    .pa { color:var(--muted); }
+
+    /* case study grid */
+    .cg { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .cg-i h4 { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .cg-i p { font-size:15px; line-height:1.6; }
+
+    /* quote */
+    .q-sec { max-width:700px; margin:0 auto; padding:72px 24px; text-align:center; }
+    .q-text { font-size:clamp(20px,3vw,26px); font-weight:600; line-height:1.5; letter-spacing:-.01em; margin-bottom:16px; }
+    .q-attr { font-size:14px; color:var(--muted); }
+
+    footer { border-top:1px solid var(--border); padding:40px 24px; text-align:center; color:var(--muted); font-size:14px; }
+    footer a { color:var(--muted); }
+    footer a:hover { color:var(--text); }
+
+    /* ── QUIZ OVERLAY ── */
+    #qo {
+      position:fixed; inset:0; z-index:1000;
+      background:rgba(0,0,0,.92); backdrop-filter:blur(12px);
+      display:flex; align-items:center; justify-content:center; padding:24px;
+      opacity:0; pointer-events:none; transition:opacity .25s;
     }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 100px 24px 80px;
-      max-width: 760px;
-      margin: 0 auto;
+    #qo.open { opacity:1; pointer-events:all; }
+    .qshell {
+      background:var(--surface); border:1px solid var(--border); border-radius:16px;
+      width:100%; max-width:560px; overflow:hidden;
+      transform:translateY(20px); transition:transform .3s cubic-bezier(.22,1,.36,1);
     }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(245, 197, 66, 0.12);
-      color: var(--accent);
-      border: 1px solid rgba(245, 197, 66, 0.3);
-      padding: 5px 14px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
+    #qo.open .qshell { transform:translateY(0); }
+    .qhdr { padding:20px 24px 0; display:flex; align-items:center; justify-content:space-between; }
+    .qbar { flex:1; height:4px; background:var(--border); border-radius:2px; margin-right:16px; overflow:hidden; }
+    .qfill { height:100%; background:var(--accent); border-radius:2px; transition:width .4s cubic-bezier(.22,1,.36,1); }
+    .qx { background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer; padding:4px; line-height:1; transition:color .15s; }
+    .qx:hover { color:var(--text); }
+    .qbody { padding:32px 24px 28px; }
+    .qstep { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+    .qq { font-size:clamp(20px,4vw,26px); font-weight:700; letter-spacing:-.02em; margin-bottom:28px; line-height:1.3; }
+    .qopts { display:flex; flex-direction:column; gap:10px; }
+    .qopt {
+      background:var(--surface2); border:1px solid var(--border); border-radius:var(--r);
+      padding:16px 20px; cursor:pointer; font-size:15px; font-weight:500; color:var(--text);
+      text-align:left; transition:border-color .15s,background .15s; width:100%;
     }
+    .qopt:hover { border-color:var(--accent); background:rgba(245,197,66,.04); }
+    .qopt.sel { border-color:var(--accent); background:rgba(245,197,66,.08); color:var(--accent); }
+    .qfoot { padding:0 24px 24px; display:flex; align-items:center; gap:12px; }
+    .qback { background:none; border:1px solid var(--border); color:var(--muted); padding:10px 18px; border-radius:var(--r); font-size:14px; font-weight:500; cursor:pointer; transition:border-color .15s,color .15s; }
+    .qback:hover { border-color:var(--text); color:var(--text); }
+    .qnext { flex:1; background:var(--accent); color:#000; padding:12px 20px; border-radius:var(--r); font-size:15px; font-weight:700; border:none; cursor:pointer; opacity:.4; pointer-events:none; transition:opacity .15s; }
+    .qnext.on { opacity:1; pointer-events:all; }
 
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 60px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+    /* result */
+    .qres { padding:32px 24px; text-align:center; display:none; }
+    .qres.show { display:block; }
+    .ri { font-size:48px; margin-bottom:16px; }
+    .re { font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+    .rsk { font-size:clamp(28px,5vw,38px); font-weight:800; letter-spacing:-.03em; color:var(--accent); margin-bottom:12px; }
+    .rr { font-size:16px; color:var(--muted); line-height:1.6; margin-bottom:8px; max-width:400px; margin-left:auto; margin-right:auto; }
+    .rin { font-size:14px; color:var(--green); font-weight:600; margin-bottom:32px; }
+    .rctas { display:flex; flex-direction:column; gap:10px; }
+    .rctas a { display:block; padding:14px 20px; border-radius:var(--r); font-size:15px; font-weight:600; text-decoration:none; transition:opacity .15s; }
+    .rctas a:hover { opacity:.85; text-decoration:none; }
+    .rcp { background:var(--accent); color:#000; }
+    .rcs { background:var(--surface2); color:var(--text); border:1px solid var(--border); }
+    .rrt { background:none; border:none; color:var(--muted); font-size:13px; cursor:pointer; margin-top:16px; text-decoration:underline; }
+    .rrt:hover { color:var(--text); }
 
-    .hero h1 span { color: var(--accent); }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-size: 15px;
-      font-weight: 600;
-      transition: opacity 0.15s;
-    }
-
-    .btn:hover { opacity: 0.85; text-decoration: none; }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    /* DIVIDER */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* SECTIONS */
-    .section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 72px 24px;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .section h2 {
-      font-size: clamp(24px, 4vw, 34px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 48px;
-      max-width: 560px;
-    }
-
-    /* FRAMEWORK */
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .rule-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
-    .rule-num {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .rule-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .rule-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* SKILLS */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .skill-row {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      transition: border-color 0.15s;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .skill-row:hover {
-      border-color: var(--accent);
-      text-decoration: none;
-    }
-
-    .skill-num {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--muted);
-      min-width: 24px;
-    }
-
-    .skill-info { flex: 1; }
-
-    .skill-info h3 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .skill-meta {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .skill-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .tag-selling { background: rgba(62, 207, 142, 0.12); color: var(--green); }
-    .tag-making { background: rgba(74, 144, 217, 0.12); color: var(--accent2); }
-    .tag-designing { background: rgba(245, 197, 66, 0.12); color: var(--accent); }
-    .tag-hunting { background: rgba(200, 100, 255, 0.12); color: #c864ff; }
-
-    .skill-arrow {
-      color: var(--muted);
-      font-size: 20px;
-      transition: transform 0.15s;
-    }
-
-    .skill-row:hover .skill-arrow { transform: translateX(4px); }
-
-    /* HOW IT WORKS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .step {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-    }
-
-    .step-num {
-      width: 32px;
-      height: 32px;
-      background: rgba(245, 197, 66, 0.12);
-      border: 1px solid rgba(245, 197, 66, 0.3);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .step h3 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* EXAMPLE DAY */
-    .example-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-    }
-
-    .example-day-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .example-box h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .example-section { margin-bottom: 20px; }
-
-    .example-section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .task-text {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .post-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .post-item:last-child { margin-bottom: 0; }
-
-    .post-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--muted);
-      padding-top: 2px;
-      min-width: 16px;
-    }
-
-    .post-text { font-size: 14px; line-height: 1.6; color: var(--text); }
-
-    .post-hook { font-weight: 600; }
-    .post-angle { color: var(--muted); }
-
-    /* QUOTE */
-    .quote-section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 72px 24px;
-      text-align: center;
-    }
-
-    .quote-text {
-      font-size: clamp(20px, 3vw, 26px);
-      font-weight: 600;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-    }
-
-    .quote-attr {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--text); }
-
-    @media (max-width: 600px) {
-      .skill-tags { display: none; }
-      .example-box > div[style*="grid"] {
-        grid-template-columns: 1fr !important;
-      }
+    @media (max-width:600px) {
+      .tags { display:none; }
+      .cg { grid-template-columns:1fr; gap:20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- QUIZ OVERLAY -->
+  <div id="qo" role="dialog" aria-modal="true" aria-label="Skill finder quiz">
+    <div class="qshell">
+      <div class="qhdr">
+        <div class="qbar"><div class="qfill" id="qprog" style="width:0%"></div></div>
+        <button class="qx" id="qclose" aria-label="Close">✕</button>
+      </div>
+      <div id="qqs">
+        <div class="qbody">
+          <div class="qstep" id="qstep">Question 1 of 4</div>
+          <div class="qq" id="qqtext"></div>
+          <div class="qopts" id="qopts"></div>
+        </div>
+        <div class="qfoot">
+          <button class="qback" id="qback" style="display:none">← Back</button>
+          <button class="qnext" id="qnext">Next →</button>
+        </div>
+      </div>
+      <div class="qres" id="qres">
+        <div class="ri" id="ricon"></div>
+        <div class="re">Your best match</div>
+        <div class="rsk" id="rname"></div>
+        <div class="rr" id="rreason"></div>
+        <div class="rin" id="rincome"></div>
+        <div class="rctas">
+          <a href="#" id="rcta1" class="rcp">Start the 90-day plan on GitHub →</a>
+          <a href="#" id="rcta2" class="rcs">View skill overview</a>
+        </div>
+        <button class="rrt" id="rretake">Retake the quiz</button>
+      </div>
+    </div>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">5 Skills · 90 Days Each · Build in Public</div>
-    <h1>The <span>90-Day</span> Skill Playbook</h1>
+    <div class="badge">5 Skills · 90 Days Each · Build in Public</div>
+    <h1>The <span>90-Day</span><br>Skill Playbook</h1>
     <p>Master one high-income skill in 90 days. Daily tasks + ready-to-post content ideas, built around Shaan Puri's 4 Rules of Money.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="https://github.com/siddchauhan77/90-day-skill-playbook">
-        View on GitHub
-      </a>
-      <a class="btn btn-secondary" href="https://github.com/siddchauhan77/90-day-skill-playbook/blob/main/pick-your-skill.md">
-        Pick Your Skill →
-      </a>
+    <div class="cta-row">
+      <button class="btn btn-p" id="openquiz">✦ Help me choose a skill</button>
+      <a class="btn btn-s" href="#skills">I know what I want →</a>
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="div" />
 
   <!-- FRAMEWORK -->
-  <section class="section">
-    <div class="section-label">The Framework</div>
+  <section class="sec">
+    <div class="lbl">The Framework</div>
     <h2>Shaan Puri's 4 Rules of Money</h2>
-    <p class="section-sub">Every skill in this playbook is mapped to this framework from the My First Million podcast.</p>
-    <div class="rules-grid">
-      <div class="rule-card">
-        <div class="rule-num">Rule 01</div>
-        <h3>Master ONE skill</h3>
-        <p>Selling, Making, Designing, or Hunting. Pick one. Go deep. Breadth comes after depth.</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">Rule 02</div>
-        <h3>Don't rent time — own equity</h3>
-        <p>Turn your skill into Code (products), Content (audience), or Capital (investments).</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">Rule 03</div>
-        <h3>Impatient with action</h3>
-        <p>Move fast on execution. Be patient with results. Compounding takes time.</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">Rule 04</div>
-        <h3>Proximity is power</h3>
-        <p>Get around people already doing what you want to do. Environment beats willpower.</p>
-      </div>
+    <p class="sub">Every skill is mapped to this framework from the My First Million podcast.</p>
+    <div class="grid4">
+      <div class="card"><div class="card-lbl">Rule 01</div><h3>Master ONE skill</h3><p>Selling, Making, Designing, or Hunting. Pick one. Go deep.</p></div>
+      <div class="card"><div class="card-lbl">Rule 02</div><h3>Own equity, not time</h3><p>Turn your skill into Code (products), Content (audience), or Capital (investments).</p></div>
+      <div class="card"><div class="card-lbl">Rule 03</div><h3>Impatient with action</h3><p>Move fast on execution. Be patient with results. Compounding takes time.</p></div>
+      <div class="card"><div class="card-lbl">Rule 04</div><h3>Proximity is power</h3><p>Get around people already doing what you want to do.</p></div>
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="div" />
 
   <!-- SKILLS -->
-  <section class="section">
-    <div class="section-label">Choose Your Path</div>
+  <section class="sec" id="skills">
+    <div class="lbl">Choose Your Path</div>
     <h2>5 High-Income Skills</h2>
-    <p class="section-sub">Each skill has a full README with income data, equity path, and top free resources — plus a 90-day daily plan.</p>
-    <div class="skills-list">
-
-      <a class="skill-row" href="https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/01-copywriting">
-        <div class="skill-num">01</div>
-        <div class="skill-info">
-          <h3>Copywriting</h3>
-          <div class="skill-meta">$65k–$120k/yr &nbsp;·&nbsp; $50–$250/hr &nbsp;·&nbsp; First client by Day 30</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag-selling">Selling</span>
-          <span class="tag tag-making">Making</span>
-        </div>
-        <div class="skill-arrow">→</div>
-      </a>
-
-      <a class="skill-row" href="https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/02-web-development">
-        <div class="skill-num">02</div>
-        <div class="skill-info">
-          <h3>Web Development</h3>
-          <div class="skill-meta">$75k–$140k/yr &nbsp;·&nbsp; First client by Day 60</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag-making">Making</span>
-          <span class="tag tag-designing">Designing</span>
-        </div>
-        <div class="skill-arrow">→</div>
-      </a>
-
-      <a class="skill-row" href="https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/03-video-editing">
-        <div class="skill-num">03</div>
-        <div class="skill-info">
-          <h3>Video Editing</h3>
-          <div class="skill-meta">$50k–$100k/yr &nbsp;·&nbsp; $40–$150/hr &nbsp;·&nbsp; First client by Day 45</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag-making">Making</span>
-          <span class="tag tag-designing">Designing</span>
-        </div>
-        <div class="skill-arrow">→</div>
-      </a>
-
-      <a class="skill-row" href="https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/04-email-marketing">
-        <div class="skill-num">04</div>
-        <div class="skill-info">
-          <h3>Email Marketing</h3>
-          <div class="skill-meta">$60k–$110k/yr &nbsp;·&nbsp; $1.5k–$5k/mo per client &nbsp;·&nbsp; First client by Day 45</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag-selling">Selling</span>
-        </div>
-        <div class="skill-arrow">→</div>
-      </a>
-
-      <a class="skill-row" href="https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/05-prompt-engineering">
-        <div class="skill-num">05</div>
-        <div class="skill-info">
-          <h3>Prompt Engineering</h3>
-          <div class="skill-meta">$80k–$150k/yr &nbsp;·&nbsp; $100–$300/hr &nbsp;·&nbsp; First client by Day 30</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag-making">Making</span>
-          <span class="tag tag-hunting">Hunting</span>
-        </div>
-        <div class="skill-arrow">→</div>
-      </a>
-
+    <p class="sub">Each skill page covers income data, equity path, and resources. The full 90-day plan lives on GitHub — fork it and follow along.</p>
+    <div class="skills">
+      <a class="sk" href="skills/copywriting.html"><div class="sk-n">01</div><div class="sk-i"><h3>Copywriting</h3><div class="sk-m">$65k–$120k/yr · $50–$250/hr · First client by Day 30</div></div><div class="tags"><span class="tag ts">Selling</span><span class="tag tm">Making</span></div><div class="arr">→</div></a>
+      <a class="sk" href="skills/web-development.html"><div class="sk-n">02</div><div class="sk-i"><h3>Web Development</h3><div class="sk-m">$75k–$140k/yr · First client by Day 60</div></div><div class="tags"><span class="tag tm">Making</span><span class="tag td">Designing</span></div><div class="arr">→</div></a>
+      <a class="sk" href="skills/video-editing.html"><div class="sk-n">03</div><div class="sk-i"><h3>Video Editing</h3><div class="sk-m">$50k–$100k/yr · $40–$150/hr · First client by Day 45</div></div><div class="tags"><span class="tag tm">Making</span><span class="tag td">Designing</span></div><div class="arr">→</div></a>
+      <a class="sk" href="skills/email-marketing.html"><div class="sk-n">04</div><div class="sk-i"><h3>Email Marketing</h3><div class="sk-m">$60k–$110k/yr · $1.5k–$5k/mo per client · First client by Day 45</div></div><div class="tags"><span class="tag ts">Selling</span></div><div class="arr">→</div></a>
+      <a class="sk" href="skills/prompt-engineering.html"><div class="sk-n">05</div><div class="sk-i"><h3>Prompt Engineering</h3><div class="sk-m">$80k–$150k/yr · $100–$300/hr · First client by Day 30</div></div><div class="tags"><span class="tag tm">Making</span><span class="tag th">Hunting</span></div><div class="arr">→</div></a>
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="div" />
 
   <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="section-label">How to Use It</div>
+  <section class="sec">
+    <div class="lbl">How to Use It</div>
     <h2>Simple. Daily. Public.</h2>
-    <p class="section-sub">Four steps. No overthinking.</p>
+    <p class="sub">Four steps. No overthinking.</p>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Fork the repo</h3>
-        <p>Make it yours. This is your personal 90-day roadmap.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Pick a skill</h3>
-        <p>Use the decision guide if you're not sure. Don't overthink it.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Do the daily task</h3>
-        <p>30–60 minutes. Specific. Actionable. Every day is written out for you.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>Post one idea</h3>
-        <p>Every day has 1–3 content ideas with exact opening hooks. Pick one and post it.</p>
-      </div>
+      <div class="step"><div class="step-n">1</div><h3>Pick a skill</h3><p>Take the quiz above or browse all five. Use the decision guide if unsure.</p></div>
+      <div class="step"><div class="step-n">2</div><h3>Fork the repo</h3><p>Everything lives on GitHub. Fork it — this is your personal 90-day roadmap.</p></div>
+      <div class="step"><div class="step-n">3</div><h3>Do the daily task</h3><p>30–60 minutes. Specific. Actionable. Every day is already written out for you.</p></div>
+      <div class="step"><div class="step-n">4</div><h3>Post one idea</h3><p>Every day has 1–3 content ideas with exact opening hooks. Pick one and post it.</p></div>
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="div" />
 
   <!-- EXAMPLE DAY -->
-  <section class="section">
-    <div class="section-label">What a Day Looks Like</div>
+  <section class="sec">
+    <div class="lbl">What a Day Looks Like</div>
     <h2>No vague instructions. Ever.</h2>
-    <p class="section-sub">Here's an actual day from the Copywriting track.</p>
-    <div class="example-box">
-      <div class="example-day-label">Day 14 — Copywriting</div>
+    <p class="sub">An actual entry from the Copywriting track.</p>
+    <div class="box">
+      <div class="box-lbl">Day 14 — Copywriting</div>
       <h3>Headlines That Demand Attention</h3>
-      <div class="example-section">
-        <div class="example-section-label">Task</div>
-        <p class="task-text">Write 25 headlines for the same product using 5 different formulas. Compare: curiosity gap, specific benefit, "how to," contrarian, and fear of loss. Rate each 1–5. Identify your top formula and your weakest. The goal isn't one great headline — it's understanding why each formula works.</p>
-      </div>
-      <div class="example-section">
-        <div class="example-section-label">Posts — pick any</div>
-        <div class="post-item">
-          <div class="post-num">1</div>
-          <div class="post-text"><span class="post-hook">"I wrote 25 headlines for the same product today. Here's the one formula that dominated."</span> <span class="post-angle">— share the comparison table + your winning formula with examples</span></div>
-        </div>
-        <div class="post-item">
-          <div class="post-num">2</div>
-          <div class="post-text"><span class="post-hook">"Most copywriters use 1 headline formula. The best ones rotate between 5. Here's the breakdown."</span> <span class="post-angle">— 5 formula breakdown with an example of each</span></div>
-        </div>
-        <div class="post-item">
-          <div class="post-num">3</div>
-          <div class="post-text"><span class="post-hook">"The headline formula that feels 'too salesy' is also the one that converts the most. Here's why."</span> <span class="post-angle">— contrarian take on fear-of-loss headlines, with data on why they work</span></div>
-        </div>
+      <div class="blk"><div class="blk-lbl">Task</div><p>Write 25 headlines for the same product using 5 different formulas. Compare: curiosity gap, specific benefit, "how to," contrarian, and fear of loss. Rate each 1–5. Identify your top formula and your weakest.</p></div>
+      <div class="blk">
+        <div class="blk-lbl">Posts — pick any</div>
+        <div class="pi"><div class="pn">1</div><div class="pt"><span class="ph">"I wrote 25 headlines for the same product today. Here's the one formula that dominated."</span> <span class="pa">— share the comparison table + winning formula</span></div></div>
+        <div class="pi"><div class="pn">2</div><div class="pt"><span class="ph">"Most copywriters use 1 headline formula. The best ones rotate between 5. Here's the breakdown."</span> <span class="pa">— 5 formula breakdown with examples</span></div></div>
+        <div class="pi"><div class="pn">3</div><div class="pt"><span class="ph">"The headline formula that feels 'too salesy' is also the one that converts most. Here's why."</span> <span class="pa">— contrarian take on fear-of-loss with data</span></div></div>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <hr class="divider" />
-
-  <!-- USE THIS YOURSELF -->
-  <section class="section">
-    <div class="section-label">For Everyone</div>
-    <h2>Fork it. Make it yours.</h2>
-    <p class="section-sub">This isn't a course. There's nothing to buy. Fork the repo and start Day 1 today.</p>
-    <div class="rules-grid">
-      <div class="rule-card">
-        <div class="rule-num">What you get</div>
-        <h3>A specific task every day</h3>
-        <p>30–60 min of deliberate practice — written out for all 90 days. No ambiguity about what to work on.</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">What you get</div>
-        <h3>Ready-to-post content ideas</h3>
-        <p>1–3 ideas per day with the exact opening hook line written out. Open your notes app and post it.</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">What you get</div>
-        <h3>A framework for equity</h3>
-        <p>Each skill is mapped to Shaan's rules — so you're not just learning a skill, you're building toward ownership.</p>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">What you get</div>
-        <h3>A path to your first dollar</h3>
-        <p>Every 90-day plan ends with a monetization phase: first client, first product launch, or first retainer.</p>
-      </div>
-    </div>
-    <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
-      <a class="btn btn-primary" href="https://github.com/siddchauhan77/90-day-skill-playbook/fork">Fork the Repo</a>
-      <a class="btn btn-secondary" href="https://github.com/siddchauhan77/90-day-skill-playbook/blob/main/pick-your-skill.md">Pick Your Skill →</a>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- PORTFOLIO / CASE STUDY FRAMING -->
-  <section class="section">
-    <div class="section-label">About This Project</div>
-    <h2>Built by Sidd Chauhan</h2>
-    <p class="section-sub">The thinking behind it — for case studies, portfolios, and interviews.</p>
-    <div class="example-box">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-        <div>
-          <div class="example-section-label" style="margin-bottom: 12px;">The Problem</div>
-          <p class="task-text">Most skill-learning resources give you a curriculum but no daily execution plan. And none of them help you build in public at the same time — so learning never compounds into an audience or clients.</p>
-        </div>
-        <div>
-          <div class="example-section-label" style="margin-bottom: 12px;">The Approach</div>
-          <p class="task-text">Applied Shaan Puri's 4 Rules of Money as the organizing framework. Structured each skill into Foundation → Application → Monetization phases. Every day: one task, one post idea, one hook.</p>
-        </div>
-        <div>
-          <div class="example-section-label" style="margin-bottom: 12px;">The Insight</div>
-          <p class="task-text">Most learning resources stop at "what to learn." This specifies what to practice AND what to post about it — so learning becomes a public compounding asset, not a private hobby.</p>
-        </div>
-        <div>
-          <div class="example-section-label" style="margin-bottom: 12px;">The Output</div>
-          <p class="task-text">5 complete 90-day curricula. 450 daily entries. Every post idea has the exact opening hook line written out — no blank page, no excuses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
+  <hr class="div" />
 
   <!-- QUOTE -->
-  <section class="quote-section">
-    <p class="quote-text">"The best advice in the world is to take actions that make it unreasonable for you to fail."</p>
-    <p class="quote-attr">— Shaan Puri</p>
+  <section class="q-sec">
+    <p class="q-text">"The best advice in the world is to take actions that make it unreasonable for you to fail."</p>
+    <p class="q-attr">— Shaan Puri</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>
-      <a href="https://github.com/siddchauhan77/90-day-skill-playbook">GitHub</a>
-      &nbsp;·&nbsp;
-      Inspired by Shaan Puri's 4 Rules of Money (My First Million / HubSpot Media)
+      <a href="https://github.com/siddchauhan77/90-day-skill-playbook">GitHub</a> &nbsp;·&nbsp;
+      <a href="https://github.com/siddchauhan77/90-day-skill-playbook/fork">Fork this repo</a> &nbsp;·&nbsp;
+      Inspired by Shaan Puri's 4 Rules of Money
     </p>
   </footer>
 
+  <script>
+    const Qs = [
+      { q:"What's your #1 goal right now?", opts:[
+        {e:"💼",l:"Land a job or get hired",         s:{webdev:2,prompt:1}},
+        {e:"🤝",l:"Get freelance clients",           s:{copy:2,email:2,video:1}},
+        {e:"🚀",l:"Build a product or startup",     s:{prompt:2,webdev:2}},
+        {e:"📣",l:"Grow an audience online",        s:{copy:1,video:2,email:1}}
+      ]},
+      { q:"How fast do you want to make money?", opts:[
+        {e:"⚡",l:"ASAP — within 30 days",          s:{copy:2,prompt:2}},
+        {e:"📅",l:"90 days is totally fine",        s:{}},
+        {e:"🌱",l:"Playing the long game",          s:{webdev:1,prompt:1}}
+      ]},
+      { q:"Which feels most like you?", opts:[
+        {e:"✍️",l:"I love writing and words",       s:{copy:3,email:2}},
+        {e:"🛠️",l:"I like building things",         s:{webdev:3,prompt:2}},
+        {e:"🎨",l:"I'm visual and creative",        s:{video:3,copy:1}},
+        {e:"🤖",l:"I want to work with AI",         s:{prompt:3}}
+      ]},
+      { q:"How much time can you commit each day?", opts:[
+        {e:"⏱️",l:"~30 minutes",                   s:{copy:1,email:1,prompt:1}},
+        {e:"🕐",l:"About 1 hour",                  s:{}},
+        {e:"🔥",l:"2+ hours — I'm all in",         s:{webdev:1,video:1}}
+      ]}
+    ];
+    const SK = {
+      copy:  {name:"Copywriting",        slug:"copywriting",        icon:"✍️", income:"$65k–$120k/yr · $50–$250/hr",   reason:"Your answers point to high-value writing. Copywriting has the fastest path to paid work and builds an audience naturally."},
+      webdev:{name:"Web Development",    slug:"web-development",    icon:"🛠️", income:"$75k–$140k/yr",                 reason:"You're builder-minded and playing a longer game — web dev has the highest ceiling on this list."},
+      video: {name:"Video Editing",      slug:"video-editing",      icon:"🎬", income:"$50k–$100k/yr · $40–$150/hr",   reason:"Visual creativity + a growing creator economy = instant demand. Every creator needs a good editor."},
+      email: {name:"Email Marketing",    slug:"email-marketing",    icon:"📧", income:"$1.5k–$5k/mo per client",       reason:"You want clients fast, and email has the highest ROI of any marketing channel. Businesses will pay to keep you."},
+      prompt:{name:"Prompt Engineering", slug:"prompt-engineering", icon:"🤖", income:"$80k–$150k/yr · $100–$300/hr",  reason:"Your answers signal speed and AI curiosity. The window is open right now — and you're in it."}
+    };
+    const GH = "https://github.com/siddchauhan77/90-day-skill-playbook/tree/main/skills/";
+    const GH_SLUGS = {copy:"01-copywriting",webdev:"02-web-development",video:"03-video-editing",email:"04-email-marketing",prompt:"05-prompt-engineering"};
+
+    let step=0, ans=[null,null,null,null];
+    const ov=document.getElementById('qo'), prog=document.getElementById('qprog'),
+          stepLbl=document.getElementById('qstep'), qText=document.getElementById('qqtext'),
+          optsEl=document.getElementById('qopts'), backBtn=document.getElementById('qback'),
+          nextBtn=document.getElementById('qnext'), qqs=document.getElementById('qqs'),
+          qres=document.getElementById('qres');
+
+    function render(){
+      const q=Qs[step];
+      stepLbl.textContent=`Question ${step+1} of ${Qs.length}`;
+      qText.textContent=q.q;
+      prog.style.width=`${(step/Qs.length)*100}%`;
+      backBtn.style.display=step>0?'':'none';
+      nextBtn.textContent=step===Qs.length-1?'See my result →':'Next →';
+      optsEl.textContent='';
+      q.opts.forEach((o,i)=>{
+        const btn=document.createElement('button');
+        btn.className='qopt'+(ans[step]===i?' sel':'');
+        btn.setAttribute('type','button');
+        const em=document.createElement('span'); em.textContent=o.e+' '; em.style.marginRight='8px';
+        const txt=document.createTextNode(o.l);
+        btn.appendChild(em); btn.appendChild(txt);
+        btn.addEventListener('click',()=>pick(i));
+        optsEl.appendChild(btn);
+      });
+      nextBtn.classList.toggle('on',ans[step]!==null);
+    }
+
+    function pick(i){
+      ans[step]=i;
+      optsEl.querySelectorAll('.qopt').forEach((b,j)=>b.classList.toggle('sel',j===i));
+      nextBtn.classList.add('on');
+    }
+
+    function result(){
+      const tot={copy:0,webdev:0,video:0,email:0,prompt:0};
+      Qs.forEach((q,si)=>{ if(ans[si]!==null){ Object.entries(q.opts[ans[si]].s).forEach(([k,v])=>tot[k]+=v); } });
+      return Object.entries(tot).sort((a,b)=>b[1]-a[1])[0][0];
+    }
+
+    function showResult(){
+      const k=result(), sk=SK[k];
+      prog.style.width='100%';
+      qqs.style.display='none';
+      qres.classList.add('show');
+      document.getElementById('ricon').textContent=sk.icon;
+      document.getElementById('rname').textContent=sk.name;
+      document.getElementById('rreason').textContent=sk.reason;
+      document.getElementById('rincome').textContent=sk.income;
+      document.getElementById('rcta1').href=GH+GH_SLUGS[k];
+      document.getElementById('rcta2').href='skills/'+sk.slug+'.html';
+    }
+
+    nextBtn.addEventListener('click',()=>{ if(ans[step]===null)return; step<Qs.length-1?(step++,render()):showResult(); });
+    backBtn.addEventListener('click',()=>{ if(step>0){step--;render();} });
+    document.getElementById('rretake').addEventListener('click',()=>{ step=0;ans=[null,null,null,null];qqs.style.display='';qres.classList.remove('show');render(); });
+
+    function open(){ov.classList.add('open');document.body.style.overflow='hidden';}
+    function close(){ov.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{qqs.style.display='';qres.classList.remove('show');},300);}
+
+    document.getElementById('openquiz').addEventListener('click',open);
+    document.getElementById('qclose').addEventListener('click',close);
+    ov.addEventListener('click',e=>{if(e.target===ov)close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+  </script>
 </body>
 </html>
