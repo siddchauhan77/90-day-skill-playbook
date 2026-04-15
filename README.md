@@ -117,6 +117,47 @@ Every task is specific. Every hook is a real opening line you can post today.
 
 ---
 
+## Fork This and Make It Yours
+
+This isn't a course. There's nothing to buy. Fork the repo, pick a skill, and start Day 1 today.
+
+**What you get:**
+- A specific 30–60 min practice task every single day for 90 days
+- 1–3 ready-to-post content ideas per day with exact opening hook lines — no blank page
+- A framework for thinking about your skill as equity, not just income
+- A clear path from Day 1 → proficiency → first dollar
+
+**Who it's for:** Anyone who wants to learn a high-income skill, build in public, and not waste time figuring out what to do next.
+
+**How to start:** Fork the repo → open `pick-your-skill.md` → open your skill's `90-day-plan.md` → do Day 1.
+
+---
+
+## How to Talk About This Project
+
+### In an Interview
+
+> *"I built an open-source learning curriculum called the 90-Day Skill Playbook. It maps 5 high-income skills — copywriting, web development, video editing, email marketing, and prompt engineering — to Shaan Puri's 4 Rules of Money framework from the My First Million podcast. Each skill track has a full 90-day daily plan: a specific practice task and 1–3 ready-to-post content ideas per day, so anyone following along is building a skill and a public audience at the same time. It's fully open source and forkable."*
+
+**Key talking points:**
+- **Problem identified:** Most skill-learning resources give you curriculum but no daily execution plan — and none of them help you build in public simultaneously
+- **Framework applied:** Mapped learning paths to Shaan Puri's 4 Rules of Money (Selling / Making / Designing / Hunting) so each skill has a clear path to equity, not just employment
+- **Scope:** 13 files, 4,800+ lines of structured content across 5 complete skill tracks — 450 days of daily plans total
+- **Design decision:** Every content idea has the exact opening hook line written out — removes the blank-page problem entirely
+- **Open source:** Anyone can fork and follow it for themselves
+
+### As a Portfolio Case Study
+
+| | |
+|---|---|
+| **Brief** | Build a practical, framework-driven learning resource for people who want to monetize a new skill in 90 days |
+| **Approach** | Applied Shaan Puri's 4 Rules of Money as the organizing framework. Structured each skill into three phases: Foundation → Application → Monetization |
+| **The insight** | Most learning resources stop at "what to learn." This goes further: it specifies *exactly* what to practice each day AND what to post about it — so learning compounds into a public audience |
+| **Output** | 5 complete 90-day curricula, a skill decision guide, a full framework explainer, and a GitHub Pages landing page |
+| **Anyone can use it** | Fully forkable — designed from the start so it works for the builder and for anyone who finds it |
+
+---
+
 > *"The best advice in the world is to take actions that make it unreasonable for you to fail."*
 > — Shaan Puri
 
