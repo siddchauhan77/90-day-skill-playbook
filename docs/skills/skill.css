@@ -124,3 +124,15 @@ footer p { font-size: 14px; color: var(--muted); }
   .offer-price { border-right:none; border-top:1px solid var(--border); }
   .byf-grid { grid-template-columns:1fr; }
 }
+
+/* ── fastest path to first client ── */
+.fast-client { background: var(--surface); border: 1px solid rgba(62,207,142,.25); border-radius: var(--r); padding: 28px 32px; }
+.fc-badge { display: inline-block; background: rgba(62,207,142,.12); color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 20px; }
+.fc-steps { list-style: none; display: flex; flex-direction: column; gap: 14px; counter-reset: step; }
+.fc-steps li { font-size: 14px; color: var(--muted); line-height: 1.65; padding-left: 36px; position: relative; counter-increment: step; }
+.fc-steps li::before { content: counter(step); position: absolute; left: 0; top: 0px; width: 22px; height: 22px; background: var(--surface2); border: 1px solid var(--border); border-radius: 50%; font-size: 11px; font-weight: 700; color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.fc-steps li strong { color: var(--text); }
+.fc-skip { margin-top: 20px; font-size: 13px; color: var(--muted); background: rgba(245,197,66,.06); border: 1px solid rgba(245,197,66,.2); border-radius: 8px; padding: 10px 16px; line-height: 1.6; }
+
+/* ── outcomes to promise label ── */
+.sell-card .outcomes-note { font-size: 11px; font-weight: 700; color: var(--green); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; display: block; }
