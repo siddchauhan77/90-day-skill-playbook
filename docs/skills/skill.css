@@ -77,3 +77,27 @@ footer p { font-size: 14px; color: var(--muted); }
   .gh-cta { padding: 32px 24px; }
   .btn-gh, .btn-fork { display: block; margin: 0 0 10px; }
 }
+
+/* ── AI breakdown ── */
+.ai-table { display:flex; flex-direction:column; gap:10px; }
+.ai-row { display:flex; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px 20px; }
+.ai-mode { font-size:11px; font-weight:700; padding:4px 12px; border-radius:100px; white-space:nowrap; min-width:108px; text-align:center; letter-spacing:.04em; }
+.ai-mode.del { background:rgba(74,144,217,.12); color:var(--accent2); }
+.ai-mode.aug { background:rgba(245,197,66,.12); color:var(--accent); }
+.ai-mode.hum { background:rgba(62,207,142,.12); color:var(--green); }
+.ai-tasks { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.ai-task { font-size:13px; color:var(--muted); background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:3px 10px; }
+
+/* ── sell section ── */
+.sell-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.sell-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px; }
+.sell-lbl { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.sell-card p { font-size:14px; color:var(--muted); line-height:1.7; font-style:italic; }
+.sell-card ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.sell-card li { font-size:14px; color:var(--muted); line-height:1.5; padding-left:18px; position:relative; }
+.sell-card li::before { content:'→'; position:absolute; left:0; color:var(--accent); font-size:11px; top:2px; }
+
+@media (max-width:680px) {
+  .ai-row { flex-direction:column; gap:10px; }
+  .sell-grid { grid-template-columns:1fr; }
+}
