@@ -372,7 +372,7 @@
     backBtn.addEventListener('click',()=>{ if(step>0){step--;render();} });
     document.getElementById('rretake').addEventListener('click',()=>{ step=0;ans=[null,null,null,null];qqs.style.display='';qres.classList.remove('show');render(); });
 
-    function open(){ov.classList.add('open');document.body.style.overflow='hidden';}
+    function open(){step=0;ans=[null,null,null,null];qqs.style.display='';qres.classList.remove('show');ov.classList.add('open');document.body.style.overflow='hidden';render();}
     function close(){ov.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{qqs.style.display='';qres.classList.remove('show');},300);}
 
     document.getElementById('openquiz').addEventListener('click',open);
